@@ -1,0 +1,10 @@
+name: Issue Trigger
+on:
+  issues:
+    types: [opened]
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output issue information
+        run: echo "${{ toJSON(github.event.issues_url) }}"
